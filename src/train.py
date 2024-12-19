@@ -82,12 +82,12 @@ def validate_model(model, device, train_loader):
     print(f"Number of parameters: {num_params}")
 
     # Validate only parameter count
-    if num_params < 50000:
+    if num_params < 8000:
         print("Model validation successful: Parameters within limit")
         return True
     else:
         raise ValueError(
-            f"Model validation failed: Parameters={num_params} (limit: 50000)"
+            f"Model validation failed: Parameters={num_params} (limit: 8000)"
         )
 
 def train_and_test():
@@ -113,7 +113,7 @@ def train_and_test():
     ])
 
     transform_train = transforms.Compose([
-        transforms.RandomRotation((-7, 7)),
+        transforms.RandomRotation((-10, 10)),
         transforms.ToTensor(),
         transforms.Normalize((mean,), (std,)),
     ])
