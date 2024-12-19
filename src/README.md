@@ -63,86 +63,86 @@ Training metrics are plotted and saved as 'training_metrics.png', showing:
 
 Install the required packages:
 
-+ ```bash
-+ pip install -r requirements.txt
-+ ```
-+
-+ Main dependencies:
-+ - PyTorch >= 1.9.0
-+ - torchvision >= 0.10.0
-+ - numpy >= 1.19.0
-+ - tqdm >= 4.65.0
-+
-+ ## Training
-+
-+ To train the model:
-+
-+ ```bash
-+ python src/train.py
-+ ```
-+
-+ The training process includes:
-+ - SGD optimizer with momentum (0.9)
-+ - Learning rate scheduling (StepLR)
-+ - Data augmentation (random rotation)
-+ - Batch normalization after each convolution
-+ - Model validation and parameter count checking
-+
-+ ## Results
-+
-+ The model achieves:
-+ - Test Accuracy: >99.4%
-+ - Parameter Count: ~14k parameters
-+ - Training Time: ~15 epochs
-+
-+ Training progress is monitored with:
-+ - Loss tracking for both training and test sets
-+ - Accuracy metrics for training and testing
-+ - Progress bars showing batch-wise progress
-+ - Best model checkpoint saving
-+
-+ ## Model Details
-+
-+ The CNN architecture:
-+ ```python
-+ # Example model structure
-+ layer1 = Conv2d(1, 8) -> BatchNorm -> ReLU
-+ layer2 = Conv2d(8, 12) -> BatchNorm -> ReLU
-+ layer3 = Conv2d(12, 16) -> BatchNorm -> ReLU
-+ MaxPool2d
-+ ...
-+ Final 1x1 Conv2d for classification
-+ ```
-+
-+ ## Usage
-+
-+ ```python
-+ from model import SimpleMNISTNet
-+
-+ # Initialize model
-+ model = SimpleMNISTNet()
-+
-+ # View model summary
-+ model.print_model_summary()
-+
-+ # Check parameter count
-+ num_params = model.count_parameters()
-+ ```
-+
-+ ## Training Visualization
-+
-+ The training script automatically generates plots showing:
-+ - Training and test loss curves
-+ - Training and test accuracy progression
-+ - Saved as 'training_metrics.png'
-+
-+ ## Contributing
-+
-+ Feel free to:
-+ - Open issues for bugs or enhancements
-+ - Submit pull requests with improvements
-+ - Share feedback on model architecture
-+
-+ ## License
-+
-+ This project is open-source and available under the MIT License.
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+  Main dependencies:
+  - PyTorch >= 1.9.0
+  - torchvision >= 0.10.0
+  - numpy >= 1.19.0
+  - tqdm >= 4.65.0
+
+  ## Training
+
+  To train the model:
+
+  ```bash
+  python src/train.py
+  ```
+
+  The training process includes:
+  - SGD optimizer with momentum (0.9)
+  - Learning rate scheduling (StepLR)
+  - Data augmentation (random rotation)
+  - Batch normalization after each convolution
+  - Model validation and parameter count checking
+
+  ## Results
+
+  The model achieves:
+  - Test Accuracy: >99.4%
+  - Parameter Count: ~14k parameters
+  - Training Time: ~15 epochs
+
+  Training progress is monitored with:
+  - Loss tracking for both training and test sets
+  - Accuracy metrics for training and testing
+  - Progress bars showing batch-wise progress
+  - Best model checkpoint saving
+
+  ## Model Details
+
+  The CNN architecture:
+  ```python
+  # Example model structure
+  layer1 = Conv2d(1, 8) -> BatchNorm -> ReLU
+  layer2 = Conv2d(8, 12) -> BatchNorm -> ReLU
+  layer3 = Conv2d(12, 16) -> BatchNorm -> ReLU
+  MaxPool2d
+  ...
+  Final 1x1 Conv2d for classification
+  ```
+
+  ## Usage
+
+  ```python
+  from model import SimpleMNISTNet
+
+  # Initialize model
+  model = SimpleMNISTNet()
+
+  # View model summary
+  model.print_model_summary()
+
+  # Check parameter count
+  num_params = model.count_parameters()
+  ```
+
+  ## Training Visualization
+
+  The training script automatically generates plots showing:
+  - Training and test loss curves
+  - Training and test accuracy progression
+  - Saved as 'training_metrics.png'
+
+  ## Contributing
+
+  Feel free to:
+  - Open issues for bugs or enhancements
+  - Submit pull requests with improvements
+  - Share feedback on model architecture
+
+  ## License
+
+  This project is open-source and available under the MIT License.
